@@ -1,6 +1,5 @@
 <?php
-define('ROOT_PATH', realpath(dirname(__FILE__) . '/../'));
-require_once ROOT_PATH . '/includes/config.php';
+require_once __DIR__ . '/../includes/init.php';
 include ROOT_PATH . '/templates/header.php';
 ?>
 
