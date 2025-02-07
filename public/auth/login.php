@@ -2,22 +2,48 @@
 require_once __DIR__ . '/../../includes/init.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'] ?? '';
+    $email = filter_var($_POST['username'], FILTER_VALIDATE_EMAIL);
     $password = $_POST['password'] ?? '';
     $remember = isset($_POST['remember']);
 
-    // TODO: Добавить валидацию и проверку в базе данных
+    if (!$email) {
+        $_SESSION['error'] = 'Пожалуйста, введите корректный email';
+        header('Location: /login.php');
+        exit;
+    }
+
+    if (strlen($password) < 6) {
+        $_SESSION['error'] = 'Пароль должен быть не менее 6 символов';
+        header('Location: /login.php');
+        exit;
+    }
     
     try {
         $db = getDB();
         
-        // Здесь будет проверка пользователя
-        // Пока просто редирект на главную
-        $_SESSION['user_id'] = 1; // Временно
-        $_SESSION['username'] = $username;
+        // Ищем пользователя по email
+        $stmt = $db->prepare("SELECT id, email, pass FROM users WHERE email = ?");
+        $stmt->execute([$email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        header('Location: /');
-        exit;
+        if ($user && verifyPassword($password, $user['pass'])) {
+            // Успешная авторизация
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['email'] = $user['email'];
+            
+            if ($remember) {
+                // Если пользователь хочет быть запомненным, устанавливаем куки на 30 дней
+                setcookie('user_id', $user['id'], time() + (86400 * 30), '/');
+                setcookie('remember_token', bin2hex(random_bytes(32)), time() + (86400 * 30), '/');
+            }
+            
+            header('Location: /');
+            exit;
+        } else {
+            $_SESSION['error'] = 'Неверный email или пароль';
+            header('Location: /login.php');
+            exit;
+        }
         
     } catch(PDOException $e) {
         $_SESSION['error'] = 'Ошибка авторизации: ' . $e->getMessage();

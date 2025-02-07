@@ -21,6 +21,9 @@ SET time_zone = "+00:00";
 -- База данных: `nexus`
 --
 
+-- Удаляем таблицу если она существует
+DROP TABLE IF EXISTS `users`;
+
 -- --------------------------------------------------------
 
 --
@@ -28,13 +31,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(110) NOT NULL,
   `family` varchar(110) NOT NULL,
   `age` date NOT NULL,
-  `phone` int(20) NOT NULL,
+  `phone` varchar(20) NOT NULL,
   `email` varchar(150) NOT NULL,
-  `pass` varchar(24) NOT NULL
+  `pass` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

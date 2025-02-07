@@ -23,21 +23,31 @@ require_once __DIR__ . '/../includes/init.php';
                     <p class="lead">общайся с Nexus!</p>
                 </div>
                 
+                <?php if (isset($_SESSION['error'])): ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <?php 
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                        ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                <?php endif; ?>
+                
                 <form class="login-form" action="/auth/login.php" method="POST">
                     <div class="mb-3">
-                        <label class="form-label">Username</label>
+                        <label class="form-label">Email</label>
                         <div class="input-group">
                             <span class="input-group-text bg-transparent border-end-0">
-                                <i class="bi bi-person text-muted"></i>
+                                <i class="bi bi-envelope text-muted"></i>
                             </span>
-                            <input type="text" class="form-control border-start-0" 
-                                   placeholder="Введите ваш никнейм" 
+                            <input type="email" class="form-control border-start-0" 
+                                   placeholder="Введите ваш email" 
                                    name="username" required>
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Password</label>
+                        <label class="form-label">Пароль</label>
                         <div class="input-group">
                             <span class="input-group-text bg-transparent border-end-0">
                                 <i class="bi bi-lock text-muted"></i>

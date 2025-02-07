@@ -4,11 +4,11 @@ session_start();
 // Конфигурация базы данных
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'myproject');
+define('DB_PASS', 'Skvorg115123!');
+define('DB_NAME', 'nexus');
 
 // Настройки сайта
-define('SITE_NAME', 'Мой проект');
+define('SITE_NAME', 'Nexus');
 define('BASE_URL', '/');
 
 // Обработка ошибок
@@ -23,15 +23,24 @@ spl_autoload_register(function ($class_name) {
 // Функция для подключения к базе данных
 function getDB() {
     try {
-        $db = new PDO(
-            "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8",
-            DB_USER,
-            DB_PASS
-        );
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $db;
+        $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
+        $options = [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false
+        ];
+        return new PDO($dsn, DB_USER, DB_PASS, $options);
     } catch(PDOException $e) {
-        echo "Ошибка подключения к БД: " . $e->getMessage();
-        exit;
+        die("Ошибка подключения к БД: " . $e->getMessage());
     }
+}
+
+// Функция для хеширования паролей
+function hashPassword($password) {
+    return password_hash($password, PASSWORD_DEFAULT);
+}
+
+// Функция для проверки пароля
+function verifyPassword($password, $hash) {
+    return password_verify($password, $hash);
 } 
