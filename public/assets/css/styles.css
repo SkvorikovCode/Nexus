@@ -15,13 +15,35 @@
     --input-bg: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.05);
     --link-color: #4f46e5;
-    --nav-link-color: rgba(255, 255, 255, 0.85);
-    --nav-link-hover: #ffffff;
+    --nav-link-color: #1e293b;
+    --nav-link-hover: #4f46e5;
     --theme-switch-bg: #e2e8f0;
     --theme-switch-circle: #ffffff;
     --post-border: #f1f5f9;
     --scrollbar-track: #f1f5f9;
     --scrollbar-thumb: #cbd5e1;
+
+    /* Типографика */
+    --font-primary: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-secondary: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+    --font-monospace: "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    
+    /* Размеры шрифтов */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    
+    /* Межстрочные интервалы */
+    --leading-none: 1;
+    --leading-tight: 1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
 }
 
 /* Темная тема */
@@ -40,8 +62,8 @@
     --input-bg: #1e1e2d;
     --shadow-color: rgba(0, 0, 0, 0.2);
     --link-color: #818cf8;
-    --nav-link-color: rgba(255, 255, 255, 0.75);
-    --nav-link-hover: #ffffff;
+    --nav-link-color: #e2e8f0;
+    --nav-link-hover: #818cf8;
     --theme-switch-bg: #6366f1;
     --theme-switch-circle: #1e1e2d;
     --post-border: #3f3f5a;
@@ -64,6 +86,12 @@ body {
     flex-direction: column;
     background-color: var(--background-color);
     color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 main {
@@ -75,17 +103,21 @@ main {
     background-color: var(--header-bg) !important;
     box-shadow: 0 1px 2px var(--shadow-color);
     border-bottom: 1px solid var(--border-color);
+    font-family: var(--font-secondary);
 }
 
 .navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-weight: 700;
+    font-size: var(--text-xl);
     color: var(--primary-color) !important;
+    letter-spacing: -0.025em;
 }
 
 .nav-link {
+    font-size: var(--text-base);
+    font-weight: 500;
     color: var(--nav-link-color) !important;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 .nav-link:hover {
@@ -115,6 +147,18 @@ main {
 
 .card-body {
     padding: 1.5rem;
+}
+
+.card-title {
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    font-size: var(--text-lg);
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
 }
 
 /* Посты */
@@ -199,7 +243,37 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    line-height: var(--leading-tight);
     color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: var(--text-4xl);
+    letter-spacing: -0.025em;
+}
+
+h2 {
+    font-size: var(--text-3xl);
+    letter-spacing: -0.025em;
+}
+
+h3 {
+    font-size: var(--text-2xl);
+}
+
+h4 {
+    font-size: var(--text-xl);
+}
+
+h5 {
+    font-size: var(--text-lg);
+}
+
+h6 {
+    font-size: var(--text-base);
 }
 
 .small {
@@ -211,6 +285,8 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--input-bg);
     border-color: var(--border-color);
     color: var(--text-primary);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
 }
 
 .form-control:focus {
@@ -222,17 +298,30 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--input-bg);
     border-color: var(--border-color);
     color: var(--text-secondary);
+    font-size: var(--text-sm);
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
     .navbar-brand {
-        font-size: 1.2rem;
+        font-size: var(--text-lg);
     }
     
     .container {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    :root {
+        --text-4xl: 2rem;
+        --text-3xl: 1.75rem;
+        --text-2xl: 1.5rem;
+        --text-xl: 1.25rem;
+        --text-lg: 1.125rem;
+    }
+
+    body {
+        font-size: 0.9375rem;
     }
 }
 
@@ -418,4 +507,90 @@ h1, h2, h3, h4, h5, h6 {
 
 .fade-in {
     animation: fadeIn 0.3s ease forwards;
+}
+
+/* Вспомогательные классы */
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text-break {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+}
+
+/* Монохромный текст */
+.text-mono {
+    font-family: var(--font-monospace);
+    font-size: 0.9em;
+}
+
+/* Параграфы и текст */
+p {
+    margin-bottom: 1rem;
+    line-height: var(--leading-relaxed);
+}
+
+.text-sm {
+    font-size: var(--text-sm);
+}
+
+.text-xs {
+    font-size: var(--text-xs);
+}
+
+.text-lg {
+    font-size: var(--text-lg);
+}
+
+.text-xl {
+    font-size: var(--text-xl);
+}
+
+.text-2xl {
+    font-size: var(--text-2xl);
+}
+
+/* Ссылки */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+/* Адаптивная типографика */
+@media (max-width: 768px) {
+    :root {
+        --text-4xl: 2rem;
+        --text-3xl: 1.75rem;
+        --text-2xl: 1.5rem;
+        --text-xl: 1.25rem;
+        --text-lg: 1.125rem;
+    }
+
+    body {
+        font-size: 0.9375rem;
+    }
+
+    .navbar-brand {
+        font-size: var(--text-lg);
+    }
 } 
