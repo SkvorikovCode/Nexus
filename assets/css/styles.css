@@ -1,20 +1,80 @@
-/* Дополнительные стили */
+/* Основные стили */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #f0f2f5;
 }
 
 main {
     flex: 1;
 }
 
-.navbar-brand {
-    font-weight: bold;
+/* Навигация */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Карточки */
 .card {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    font-weight: 500;
+}
+
+/* Посты */
+.post-form textarea {
+    resize: none;
+    border: 1px solid #dee2e6;
+}
+
+.post-form textarea:focus {
+    box-shadow: none;
+    border-color: #0d6efd;
+}
+
+/* Кнопки */
+.btn-link {
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+/* Профиль */
+.profile-avatar {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Утилиты */
+.text-muted {
+    color: #6c757d !important;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 /* Дополнительные стили для PHP проекта */
