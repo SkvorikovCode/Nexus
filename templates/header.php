@@ -1,5 +1,5 @@
 <?php 
-require_once ROOT_PATH . '/includes/config.php'; 
+require_once ROOT_PATH . '/includes/config.php'; //TODO: ТУДУшка
 ?>
 <!DOCTYPE html>
 <html lang="ru">
