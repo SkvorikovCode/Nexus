@@ -1,5 +1,5 @@
 <?php 
-require_once ROOT_PATH . '/includes/config.php'; //TODO: ТУДУшка
+require_once ROOT_PATH . '/includes/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="ru" data-theme="light">
@@ -13,39 +13,6 @@ require_once ROOT_PATH . '/includes/config.php'; //TODO: ТУДУшка
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <!-- Custom CSS -->
     <link href="/assets/css/styles.css" rel="stylesheet">
-    <script>
-        // Проверяем системные настройки темы
-        function getPreferredTheme() {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                return 'dark';
-            }
-            return 'light';
-        }
-
-        // Применяем тему
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            
-            const themeSwitch = document.querySelector('.theme-switch');
-            if (themeSwitch) {
-                themeSwitch.classList.toggle('active', theme === 'dark');
-            }
-        }
-
-        // Инициализация темы
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme') || getPreferredTheme();
-            setTheme(savedTheme);
-
-            // Следим за системными настройками
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-                if (!localStorage.getItem('theme')) {
-                    setTheme(e.matches ? 'dark' : 'light');
-                }
-            });
-        });
-    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -92,30 +59,9 @@ require_once ROOT_PATH . '/includes/config.php'; //TODO: ТУДУшка
         </div>
     </nav>
 
-    <script>
-        // Управление темой
-        const themeSwitch = document.querySelector('.theme-switch');
-        
-        themeSwitch.addEventListener('click', function() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            setTheme(newTheme);
-
-            // Анимация иконок
-            const icons = document.querySelectorAll('.theme-icon');
-            icons.forEach(icon => icon.style.transform = 'scale(1.2)');
-            setTimeout(() => {
-                icons.forEach(icon => icon.style.transform = 'scale(1)');
-            }, 200);
-        });
-
-        // Доступность с клавиатуры
-        themeSwitch.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.click();
-            }
-        });
-    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Theme Switcher -->
+    <script src="/assets/js/theme-switcher.js"></script>
 </body>
 </html> 

@@ -307,46 +307,61 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.2s ease-in-out;
 }
 
-/* Кнопка переключения темы */
+/* Переключатель темы */
+.theme-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 1rem;
+    padding: 0.25rem;
+}
+
 .theme-switch {
-    width: 56px;
-    height: 28px;
-    border-radius: 14px;
-    background-color: var(--theme-switch-bg);
     position: relative;
+    width: 48px;
+    height: 24px;
+    background-color: var(--theme-switch-bg);
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .theme-switch::before {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: var(--theme-switch-circle);
-    top: 2px;
     left: 2px;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--theme-switch-circle);
+    border-radius: 50%;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 2px 4px var(--shadow-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .theme-switch.active {
     background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .theme-switch.active::before {
-    transform: translateX(28px);
-    background-color: var(--card-background);
+    transform: translateX(24px);
+    background-color: white;
 }
 
-/* Иконки темы */
 .theme-icon {
-    font-size: 1.2rem;
     color: var(--text-primary);
-    margin: 0 0.5rem;
-    transition: opacity 0.3s ease;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.theme-icon.sun {
+    color: #f59e0b;
+}
+
+.theme-icon.moon {
+    color: #6366f1;
 }
 
 [data-theme="dark"] .theme-icon.sun {
@@ -355,6 +370,22 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme="light"] .theme-icon.moon {
     opacity: 0.5;
+}
+
+/* Анимация при смене темы */
+.theme-transition {
+    animation: themeChange 0.3s ease;
+}
+
+@keyframes themeChange {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Посты */
