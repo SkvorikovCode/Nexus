@@ -1,6 +1,7 @@
 <?php
-require_once '../includes/config.php';
-include '../templates/header.php';
+define('ROOT_PATH', realpath(dirname(__FILE__) . '/../'));
+require_once ROOT_PATH . '/includes/config.php';
+include ROOT_PATH . '/templates/header.php';
 ?>
 
 <main class="container my-5">
@@ -30,4 +31,4 @@ include '../templates/header.php';
     </div>
 </main>
 
-<?php include '../templates/footer.php'; ?> 
+<?php include ROOT_PATH . '/templates/footer.php'; ?> 
