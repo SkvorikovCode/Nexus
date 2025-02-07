@@ -6,6 +6,11 @@
 
 # Системные файлы
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
 # Зависимости и временные файлы PHP
@@ -16,6 +21,8 @@ composer.lock
 
 # Конфигурационные файлы с чувствительными данными
 .env
+.env.*
+!.env.example
 config.local.php
 
 # Временные файлы
@@ -28,3 +35,18 @@ config.local.php
 /template/*
 
 DOCUMENTATION.md
+
+# Uploaded files
+public/uploads/*
+!public/uploads/.gitkeep
+!public/uploads/avatars/.gitkeep
+
+# Node
+/node_modules/
+package-lock.json
+
+# Cache and logs
+/logs/*
+!logs/.gitkeep
+/cache/*
+!cache/.gitkeep

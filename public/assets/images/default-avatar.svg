@@ -1,0 +1,16 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Фон -->
+    <rect width="200" height="200" fill="#E2E8F0"/>
+    
+    <!-- Градиент для фигуры -->
+    <defs>
+        <linearGradient id="avatarGradient" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#818CF8"/>
+            <stop offset="100%" stop-color="#6366F1"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Фигура пользователя -->
+    <path fill="url(#avatarGradient)" d="M100 110c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40z"/>
+    <path fill="url(#avatarGradient)" d="M168.4 170c-3.5-25.5-25.3-45-68.4-45s-64.9 19.5-68.4 45c-.3 2 .4 4 1.9 5.5 1.5 1.5 3.5 2.3 5.5 2.3h122c2 0 4-.8 5.5-2.3 1.5-1.5 2.2-3.5 1.9-5.5z"/>
+</svg> 

@@ -66,7 +66,7 @@ CREATE TABLE `users` (
   `age` date NOT NULL,
   `phone` varchar(20) NOT NULL,
   `email` varchar(150) NOT NULL,
-  `pass` varchar(24) NOT NULL,
+  `pass` varchar(24) NOT NULL, -- TODO: Я тут изменил, на 255 из-за hash пароля а не того, что дает пользак сайту
   `profilePic` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

@@ -593,4 +593,91 @@ a:hover {
     .navbar-brand {
         font-size: var(--text-lg);
     }
+}
+
+/* Аватарки */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--card-background);
+    border: 2px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+}
+
+.avatar-sm {
+    width: 32px;
+    height: 32px;
+}
+
+.avatar-lg {
+    width: 64px;
+    height: 64px;
+}
+
+.avatar-xl {
+    width: 96px;
+    height: 96px;
+}
+
+.avatar-2xl {
+    width: 128px;
+    height: 128px;
+    border-width: 3px;
+}
+
+.avatar-group {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-group .avatar {
+    margin-left: -0.5rem;
+    border: 2px solid var(--card-background);
+    box-shadow: 0 0 0 2px var(--border-color);
+}
+
+.avatar-group .avatar:first-child {
+    margin-left: 0;
+}
+
+.avatar-group .avatar:hover {
+    transform: translateY(-2px);
+}
+
+.avatar-status {
+    position: relative;
+}
+
+.avatar-status::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    border: 2px solid var(--card-background);
+}
+
+.avatar-status.online::after {
+    background-color: var(--success-color);
+}
+
+.avatar-status.offline::after {
+    background-color: var(--text-secondary);
+}
+
+.avatar-status.busy::after {
+    background-color: var(--danger-color);
+}
+
+.avatar-status.away::after {
+    background-color: #f59e0b;
 } 
