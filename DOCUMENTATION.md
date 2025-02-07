@@ -57,30 +57,8 @@ CREATE TABLE users (
   phone varchar(20) NOT NULL,
   email varchar(150) NOT NULL,
   pass varchar(255) NOT NULL,
-  headline text DEFAULT NULL,
-  about text DEFAULT NULL,
-  location varchar(255) DEFAULT NULL,
-  work_title varchar(255) DEFAULT NULL,
-  work_company varchar(255) DEFAULT NULL,
-  avatar varchar(255) DEFAULT NULL,
-  connections int(11) DEFAULT 0,
-  created_at timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (id),
   UNIQUE KEY email (email)
-)
-```
-
-### Таблица achievements
-```sql
-CREATE TABLE achievements (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  user_id int(11) NOT NULL,
-  title varchar(255) NOT NULL,
-  description varchar(255) NOT NULL,
-  badge_url varchar(255) DEFAULT NULL,
-  achieved_at timestamp NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (id),
-  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 )
 ```
 
