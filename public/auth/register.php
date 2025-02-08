@@ -11,12 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
     $phone = trim($_POST['phone']);
     $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
+    $password_confirm = $_POST['password_confirm'];
     $age = $_POST['age'];
 
-    if (empty($name) || empty($family) || empty($email) || empty($password) || empty($confirm_password) || empty($age)) {
+    if (empty($name) || empty($family) || empty($email) || empty($password) || empty($password_confirm) || empty($age)) {
         $error = 'Пожалуйста, заполните все поля';
-    } elseif ($password !== $confirm_password) {
+    } elseif ($password !== $password_confirm) {
         $error = 'Пароли не совпадают';
     } elseif (strlen($password) < 6) {
         $error = 'Пароль должен содержать минимум 6 символов';
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <div class="mb-4">
                             <label class="form-label">Подтвердите пароль</label>
-                            <input type="password" name="confirm_password" class="form-control" required>
+                            <input type="password" name="password_confirm" class="form-control" required>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100 mb-3">Зарегистрироваться</button>

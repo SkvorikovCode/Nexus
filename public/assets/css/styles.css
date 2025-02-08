@@ -337,60 +337,6 @@ h6 {
     color: var(--danger-color);
 }
 
-/* Страница логина */
-.login-page {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-}
-
-.login-form {
-    background: var(--card-background);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.login-form .form-control {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border-radius: 0.5rem;
-}
-
-.login-form .input-group-text {
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-}
-
-.login-form .btn-primary {
-    padding: 0.75rem;
-    font-size: 1rem;
-    border-radius: 0.5rem;
-    background-color: #0095f6;
-    border-color: #0095f6;
-}
-
-.login-form .btn-primary:hover {
-    background-color: #0086db;
-    border-color: #0086db;
-}
-
-.login-form .social-login .btn {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    line-height: 38px;
-    border-radius: 50%;
-}
-
-.login-form .social-login .btn i {
-    font-size: 1.2rem;
-}
-
-/* Дополнительные эффекты */
-.badge {
-    background-color: var(--primary-color);
-    color: white;
-}
-
 /* Анимации */
 .btn, .card {
     transition: all 0.2s ease-in-out;

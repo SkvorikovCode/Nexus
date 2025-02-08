@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <pattern id="auth-pattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+            <!-- Круги -->
+            <circle cx="3" cy="3" r="1.5" fill="white" fill-opacity="0.3"/>
+            <circle cx="47" cy="47" r="1.5" fill="white" fill-opacity="0.3"/>
+            
+            <!-- Квадраты -->
+            <rect x="22" y="22" width="3" height="3" fill="white" fill-opacity="0.2" 
+                  transform="rotate(45, 23.5, 23.5)"/>
+            
+            <!-- Линии -->
+            <path d="M37 13 L40 16" stroke="white" stroke-width="1" stroke-opacity="0.2"/>
+            <path d="M13 37 L16 40" stroke="white" stroke-width="1" stroke-opacity="0.2"/>
+            
+            <!-- Точки -->
+            <circle cx="10" cy="40" r="1" fill="white" fill-opacity="0.15"/>
+            <circle cx="40" cy="10" r="1" fill="white" fill-opacity="0.15"/>
+            
+            <!-- Декоративные элементы -->
+            <path d="M5 25 Q 12 20, 15 25" stroke="white" stroke-width="1" stroke-opacity="0.15" fill="none"/>
+            <path d="M25 5 Q 30 12, 25 15" stroke="white" stroke-width="1" stroke-opacity="0.15" fill="none"/>
+        </pattern>
+    </defs>
+    
+    <!-- Применяем паттерн к фоновому прямоугольнику -->
+    <rect width="100%" height="100%" fill="url(#auth-pattern)"/>
+</svg> 
