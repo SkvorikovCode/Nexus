@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 15L35 30L20 45M35 15L50 30L35 45" stroke="#4F46E5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M70 15H80L95 45H85L82 38H68L65 45H55L70 15ZM79 31L75 22L71 31H79Z" fill="#111827"/>
+    <path d="M100 15H110V35C110 38 111 40 115 40C119 40 120 38 120 35V15H130V35C130 44 125 46 115 46C105 46 100 44 100 35V15Z" fill="#111827"/>
+    <path d="M135 15H160V22H145V27H158V34H145V45H135V15Z" fill="#111827"/>
+    <path d="M165 15H175V38H190V45H165V15Z" fill="#111827"/>
+</svg> 

@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+// Основные константы сайта
+define('SITE_NAME', 'Nexus');
+define('SITE_DESCRIPTION', 'Социальная сеть для творческих людей');
+
 // Определяем ROOT_PATH только если она еще не определена
 if (!defined('ROOT_PATH')) {
     define('ROOT_PATH', dirname(__DIR__));

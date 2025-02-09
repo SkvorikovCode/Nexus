@@ -29,27 +29,27 @@ try {
     $posts = [
         [
             'author' => 'Анна Сидорова',
-            'avatar' => 'https://via.placeholder.com/150',
+            'avatar' => asset('images/avatar-small-placeholder.svg'),
             'time' => '2 часа назад',
-            'image' => 'https://via.placeholder.com/600x800',
+            'image' => asset('images/post-placeholder.svg'),
             'content' => 'Прекрасный закат сегодня! 🌅 #природа #закат #фотография',
             'likes' => 142,
             'comments' => 23
         ],
         [
             'author' => 'Максим Петров',
-            'avatar' => 'https://via.placeholder.com/150',
+            'avatar' => asset('images/avatar-small-placeholder.svg'),
             'time' => '5 часов назад',
-            'image' => 'https://via.placeholder.com/600x600',
+            'image' => asset('images/post-placeholder.svg'),
             'content' => 'Новый проект почти завершен! 💻 Скоро покажу результаты. #разработка #coding #webdev',
             'likes' => 89,
             'comments' => 12
         ],
         [
             'author' => 'Елена Волкова',
-            'avatar' => 'https://via.placeholder.com/150',
+            'avatar' => asset('images/avatar-small-placeholder.svg'),
             'time' => '8 часов назад',
-            'image' => 'https://via.placeholder.com/600x900',
+            'image' => asset('images/post-placeholder.svg'),
             'content' => 'Утренняя йога - лучшее начало дня 🧘‍♀️ #йога #здоровье #спорт',
             'likes' => 256,
             'comments' => 34
@@ -65,7 +65,7 @@ try {
         <div class="col-lg-3 d-none d-lg-block">
             <div class="card mb-3">
                 <div class="card-body text-center">
-                    <img src="https://via.placeholder.com/150" class="rounded-circle profile-avatar mb-3" alt="Фото профиля">
+                    <img src="<?php echo asset('images/profile-placeholder.svg'); ?>" class="rounded-circle profile-avatar mb-3" alt="Фото профиля">
                     <h5 class="card-title"><?php echo htmlspecialchars($user['name'] . ' ' . $user['family']); ?></h5>
                     <p class="text-muted mb-3">@<?php echo strtolower(str_replace(' ', '', $user['name'])); ?></p>
                     <div class="d-flex justify-content-around mb-3">
@@ -94,7 +94,7 @@ try {
                 <div class="card-body">
                     <form action="/posts/create.php" method="POST" class="post-form">
                         <div class="d-flex mb-3">
-                            <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="">
+                            <img src="<?php echo asset('images/avatar-small-placeholder.svg'); ?>" class="rounded-circle me-2" alt="">
                             <textarea class="form-control" rows="2" name="content" 
                                     placeholder="Что у вас нового?"></textarea>
                         </div>
@@ -123,7 +123,7 @@ try {
                         <?php for($i = 0; $i < 6; $i++): ?>
                         <div class="text-center me-3" style="min-width: 80px;">
                             <div class="position-relative d-inline-block mb-2">
-                                <img src="https://via.placeholder.com/60" 
+                                <img src="<?php echo asset('images/story-placeholder.svg'); ?>" 
                                      class="rounded-circle border border-3 border-primary" alt="">
                                 <div class="position-absolute bottom-0 end-0">
                                     <span class="badge rounded-circle bg-primary p-1">
@@ -219,7 +219,7 @@ try {
                     <?php for($i = 0; $i < 5; $i++): ?>
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <div class="d-flex align-items-center">
-                            <img src="https://via.placeholder.com/40" 
+                            <img src="<?php echo asset('images/avatar-small-placeholder.svg'); ?>" 
                                  class="rounded-circle me-2" alt="">
                             <div>
                                 <h6 class="mb-0 small">Пользователь <?php echo $i + 1; ?></h6>
