@@ -57,6 +57,12 @@ try {
     }
 }
 
+// Функция для получения подключения к базе данных
+function getDB() {
+    global $pdo;
+    return $pdo;
+}
+
 // Функции для работы с путями
 function asset($path) {
     return '/assets/' . ltrim($path, '/');
