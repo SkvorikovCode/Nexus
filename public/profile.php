@@ -34,7 +34,7 @@ try {
         <div class="card-body p-4">
             <div class="row align-items-center">
                 <div class="col-auto">
-                    <img src="https://via.placeholder.com/120" 
+                    <img src="<?php echo asset('images/profile-placeholder.svg'); ?>" 
                          class="rounded-circle profile-avatar" 
                          alt="<?php echo htmlspecialchars($user['name']); ?>">
                 </div>
@@ -91,7 +91,7 @@ try {
                     <h2 class="h5 mb-4">Works as</h2>
                     <div class="d-flex align-items-center">
                         <div class="flex-shrink-0">
-                            <img src="https://via.placeholder.com/48" class="rounded" alt="Company Logo">
+                            <img src="<?php echo asset('images/company-placeholder.svg'); ?>" class="rounded" alt="Company Logo">
                         </div>
                         <div class="flex-grow-1 ms-3">
                             <h3 class="h6 mb-1">Product Designer</h3>
@@ -126,7 +126,7 @@ try {
                     <div class="d-flex align-items-center mb-4">
                         <div class="flex-shrink-0">
                             <div class="achievement-badge">
-                                <img src="https://via.placeholder.com/48" class="rounded" alt="Badge">
+                                <img src="<?php echo asset('images/badge-placeholder.svg'); ?>" class="rounded" alt="Badge">
                             </div>
                         </div>
                         <div class="flex-grow-1 ms-3">
@@ -142,7 +142,7 @@ try {
                     <div class="d-flex align-items-center mb-4">
                         <div class="flex-shrink-0">
                             <div class="achievement-badge">
-                                <img src="https://via.placeholder.com/48" class="rounded" alt="Badge">
+                                <img src="<?php echo asset('images/badge-placeholder.svg'); ?>" class="rounded" alt="Badge">
                             </div>
                         </div>
                         <div class="flex-grow-1 ms-3">
@@ -158,7 +158,7 @@ try {
                     <div class="d-flex align-items-center">
                         <div class="flex-shrink-0">
                             <div class="achievement-badge">
-                                <img src="https://via.placeholder.com/48" class="rounded" alt="Badge">
+                                <img src="<?php echo asset('images/badge-placeholder.svg'); ?>" class="rounded" alt="Badge">
                             </div>
                         </div>
                         <div class="flex-grow-1 ms-3">
